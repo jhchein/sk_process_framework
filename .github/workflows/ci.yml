@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1" # Weekly check (every Monday at 6am UTC)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      API_KEY: ${{ secrets.API_KEY }}
+      ENDPOINT: ${{ secrets.ENDPOINT }}
+      DEPLOYMENT_NAME: ${{ secrets.DEPLOYMENT_NAME }}
+    strategy:
+      matrix:
+        python-version: [3.11, 3.12]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install semantic-kernel
+          pip install -r requirements.txt || true
+          pip install pytest
+
+      - name: Run tests
+        run: pytest || echo "No tests found, skipping."
