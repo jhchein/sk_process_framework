@@ -1,6 +1,6 @@
 # SK Process Framework Example (Python)
 
-[![CI](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg)](https://github.com/${{ github.repository }}/actions/workflows/ci.yml)
+[![CI](https://github.com/jhchein/sk_process_framework/actions/workflows/ci.yml/badge.svg)](https://github.com/jhchein/sk_process_framework/actions/workflows/ci.yml)
 
 Hey there! 👋
 
