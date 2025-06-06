@@ -1,5 +1,7 @@
 # SK Process Framework Example (Python)
 
+[![CI](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg)](https://github.com/${{ github.repository }}/actions/workflows/ci.yml)
+
 Hey there! 👋
 
 This repo is a hands-on example of using the [Semantic Kernel Process Framework](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/process/examples/example-first-process?pivots=programming-language-python) for orchestrating multi-step AI workflows in Python. The code here is based on (and adapted from) the official Microsoft tutorials:
